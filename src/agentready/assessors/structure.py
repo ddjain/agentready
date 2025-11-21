@@ -45,11 +45,16 @@ class StandardLayoutAssessor(BaseAssessor):
         # Check for common standard directories
         standard_dirs = {
             "src": repository.path / "src",
-            "tests": (repository.path / "tests") or (repository.path / "test"),
         }
 
-        found_dirs = sum(1 for d in standard_dirs.values() if d and d.exists())
-        required_dirs = len([d for d in standard_dirs.values() if d])
+        # Check for tests directory (either tests/ or test/)
+        tests_path = repository.path / "tests"
+        if not tests_path.exists():
+            tests_path = repository.path / "test"
+        standard_dirs["tests"] = tests_path
+
+        found_dirs = sum(1 for d in standard_dirs.values() if d.exists())
+        required_dirs = len(standard_dirs)
 
         score = self.calculate_proportional_score(
             measured_value=found_dirs,

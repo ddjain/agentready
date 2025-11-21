@@ -26,7 +26,7 @@ class HTMLReporter(BaseReporter):
         """Initialize HTML reporter with Jinja2 environment."""
         self.env = Environment(
             loader=PackageLoader("agentready", "templates"),
-            autoescape=select_autoescape(["html", "xml"]),
+            autoescape=select_autoescape(["html", "xml", "j2"]),
         )
 
     def generate(self, assessment: Assessment, output_path: Path) -> Path:

@@ -575,8 +575,8 @@
     </div>
 
     <script>
-        // Embedded assessment data
-        const ASSESSMENT = {{ assessment_json|safe }};
+        // Embedded assessment data (properly escaped to prevent XSS)
+        const ASSESSMENT = JSON.parse({{ assessment_json|tojson }});
 
         // Toggle finding expansion
         function toggleFinding(header) {
