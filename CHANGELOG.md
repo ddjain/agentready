@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/ambient-code/agentready/compare/v1.0.3...v1.0.4) (2025-11-21)
+
+
+### Bug Fixes
+
+* set correct baseurl for GitHub Pages subdirectory deployment ([c4db765](https://github.com/ambient-code/agentready/commit/c4db7655c83a1f5e407a8c045cc21d4a53b97385))
+
 ## [1.0.3](https://github.com/ambient-code/agentready/compare/v1.0.2...v1.0.3) (2025-11-21)
 
 
