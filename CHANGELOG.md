@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/ambient-code/agentready/compare/v1.4.0...v1.5.0) (2025-11-21)
+
+
+### Features
+
+* Add Doubleagent - specialized AgentReady development agent ([#30](https://github.com/ambient-code/agentready/issues/30)) ([0ab54cb](https://github.com/ambient-code/agentready/commit/0ab54cb94c79291bf2303bd5c864e4444e31b33f))
+
 # [1.4.0](https://github.com/ambient-code/agentready/compare/v1.3.0...v1.4.0) (2025-11-21)
 
 
