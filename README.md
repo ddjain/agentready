@@ -2,6 +2,8 @@
 
 Assess git repositories against 25 evidence-based attributes for AI-assisted development readiness.
 
+> **📚 Research-Based Assessment**: AgentReady's 25 attributes are derived from [comprehensive research](agent-ready-codebase-attributes.md) analyzing 50+ authoritative sources including **Anthropic**, **Microsoft**, **Google**, **ArXiv**, and **IEEE/ACM**. Each attribute is backed by peer-reviewed research and industry best practices. [View full research report →](agent-ready-codebase-attributes.md)
+
 ## Overview
 
 AgentReady evaluates your repository across multiple dimensions of code quality, documentation, testing, and infrastructure to determine how well-suited it is for AI-assisted development workflows. The tool generates comprehensive reports with:
