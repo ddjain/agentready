@@ -508,8 +508,206 @@ type_annotations:
 
 ---
 
+### GitHub App Integration (Badge & Status Checks)
+
+**Priority**: P2 (High Value)
+
+**Description**: Create a GitHub App that provides badge integration, PR status checks, and automated assessment comments to help Red Hat engineering teams track and improve repository quality.
+
+**Core Features**:
+
+1. **Repository Badge**
+   - Shields.io-compatible SVG badge showing certification level
+   - Endpoint: `https://agentready.redhat.com/badge/{owner}/{repo}.svg`
+   - Dynamic color based on certification (Platinum=purple, Gold=yellow, Silver=silver, Bronze=brown)
+   - Include score: "AgentReady: 85.2 (Gold)"
+   - Click badge to view latest assessment report
+
+2. **GitHub Actions Integration**
+   - Create official `agentready/assess-action` GitHub Action
+   - Run assessment on PR events (opened, synchronized, reopened)
+   - Run assessment on push to main/master
+   - Support custom triggers via workflow_dispatch
+
+3. **PR Status Checks**
+   - Use GitHub Commit Status API to report assessment results
+   - Set check status: success (>90), warning (75-89), failure (<75)
+   - Configurable thresholds via `.agentready-config.yaml`
+   - Block PR merge if score below threshold (optional)
+   - Link to detailed HTML report in check details
+
+4. **PR Comments**
+   - Automated bot comments on PRs with assessment summary
+   - Show score delta: "Score changed: 72.4 → 78.3 (+5.9)"
+   - List new failures and fixes
+   - Collapsible sections for full findings
+   - Trend chart showing last 10 assessments (ASCII or embedded image)
+   - Include remediation suggestions for new failures
+
+**Technical Implementation**:
+
+**Phase 1: GitHub Actions Integration**
+```yaml
+# .github/workflows/agentready.yml
+name: AgentReady Assessment
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main, master]
+
+jobs:
+  assess:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: agentready/assess-action@v1
+        with:
+          threshold: 75
+          post-comment: true
+          update-status: true
+```
+
+**Phase 2: Badge Service**
+```python
+# FastAPI endpoint for badge generation
+@app.get("/badge/{owner}/{repo}.svg")
+async def get_badge(owner: str, repo: str):
+    # Fetch latest assessment from GitHub Actions artifacts
+    # Or run quick assessment on-demand
+    score, level = get_latest_assessment(owner, repo)
+    color = LEVEL_COLORS[level]
+    return SVGResponse(generate_badge(score, level, color))
+```
+
+**Phase 3: GitHub App**
+- App permissions: Contents (read), Checks (write), Pull requests (write)
+- Webhook events: push, pull_request
+- Installed via GitHub Marketplace (Red Hat internal)
+- Dashboard at agentready.redhat.com showing:
+  - Repository list with scores
+  - Historical trends
+  - Organization-wide statistics
+  - Top repositories by improvement
+
+**Integration Points**:
+
+1. **GitHub Actions Artifacts**
+   - Store assessment reports as workflow artifacts
+   - Keep last 30 days of reports for trend analysis
+   - Generate downloadable HTML/JSON/Markdown reports
+
+2. **GitHub Status API**
+   ```python
+   POST /repos/{owner}/{repo}/statuses/{commit_sha}
+   {
+     "state": "success",  # or "pending", "failure", "error"
+     "target_url": "https://agentready.redhat.com/reports/{run_id}",
+     "description": "AgentReady: 85.2 (Gold)",
+     "context": "agentready/assessment"
+   }
+   ```
+
+3. **GitHub Checks API** (preferred over Status API)
+   ```python
+   POST /repos/{owner}/{repo}/check-runs
+   {
+     "name": "AgentReady Assessment",
+     "status": "completed",
+     "conclusion": "success",
+     "output": {
+       "title": "Score: 85.2/100 (Gold)",
+       "summary": "Passed 20/25 attributes",
+       "text": "Detailed findings..."
+     }
+   }
+   ```
+
+**Use Cases**:
+
+**Use Case 1: Add Badge to README**
+```markdown
+# My Project
+
+[![AgentReady](https://agentready.redhat.com/badge/redhat/my-project.svg)](https://agentready.redhat.com/reports/redhat/my-project)
+```
+
+**Use Case 2: Enforce Quality Gates**
+```yaml
+# .agentready-config.yaml
+github:
+  status_checks:
+    enabled: true
+    min_score: 75  # Block merge if score < 75
+    require_improvement: true  # Block if score decreased
+```
+
+**Use Case 3: Track Organization Progress**
+- Dashboard shows all repos in Red Hat org
+- Filter by team, language, certification level
+- Identify repos needing attention
+- Celebrate improvements (score increases)
+
+**Configuration**:
+
+```yaml
+# .agentready-config.yaml
+github:
+  badge:
+    enabled: true
+    style: flat-square  # or flat, plastic, for-the-badge
+    label: "AgentReady"
+
+  actions:
+    enabled: true
+    trigger_on: [pull_request, push]
+    post_comment: true
+    update_status: true
+    upload_artifacts: true
+
+  status_checks:
+    enabled: true
+    min_score: 75
+    require_improvement: false
+
+  comments:
+    enabled: true
+    show_delta: true
+    show_trend: true
+    collapse_details: true
+```
+
+**Implementation Checklist**:
+
+- [ ] Create `agentready/assess-action` GitHub Action
+- [ ] Implement badge generation service
+- [ ] Add GitHub Status API integration
+- [ ] Add GitHub Checks API integration
+- [ ] Implement PR comment generation
+- [ ] Add score delta calculation
+- [ ] Create assessment artifact storage
+- [ ] Build organization dashboard
+- [ ] Add Red Hat SSO authentication
+- [ ] Deploy to Red Hat infrastructure
+- [ ] Create documentation for Red Hat teams
+- [ ] Add to Red Hat developer onboarding
+
+**Related**: CI/CD integration, automation, visibility, quality gates
+
+**Notes**:
+- Focus on internal Red Hat adoption first
+- Badge service could be hosted on Red Hat infrastructure
+- Dashboard should integrate with Red Hat IdM for authentication
+- Consider integration with Red Hat's existing code quality tools
+- GitHub App should be installable via Red Hat GitHub Enterprise
+- All data stays within Red Hat infrastructure (no external services)
+- Align with Red Hat's OpenShift AI strategy for agentic development
+- Could become part of Red Hat's AI-assisted development workflow
+
+---
+
 ## Backlog Metadata
 
 **Created**: 2025-11-21
 **Last Updated**: 2025-11-21
-**Total Items**: 7
+**Total Items**: 8
