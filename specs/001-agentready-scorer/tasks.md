@@ -112,24 +112,24 @@
 
 ### Implementation for User Story 2
 
-- [ ] T047 [P] [US2] Create Jinja2 template in src/agentready/templates/report.html.j2 with structure from contracts/report-html-schema.md
-- [ ] T048 [P] [US2] Add embedded CSS in template (header, controls, summary cards, findings, certification ladder, footer)
-- [ ] T049 [P] [US2] Add embedded JavaScript in template (filtering by status, sorting by score/tier/category, search, smooth scroll)
-- [ ] T050 [P] [US2] Implement BaseReporter interface in src/agentready/reporters/base.py with generate() method
-- [ ] T051 [US2] Implement HTMLReporter in src/agentready/reporters/html.py extending BaseReporter
-- [ ] T052 [US2] Add Jinja2 template rendering with Assessment data embedded as JSON constant
-- [ ] T053 [US2] Implement collapsible sections using HTML5 details/summary elements per contracts/report-html-schema.md
-- [ ] T054 [US2] Add color-coded score indicators (red <40, yellow 40-74, green 75+) per contracts/report-html-schema.md
-- [ ] T055 [US2] Add tier badges with color coding (Tier 1 red, Tier 2 orange, Tier 3 yellow, Tier 4 green)
-- [ ] T056 [US2] Implement category summary cards with progress bars and click-to-scroll behavior
-- [ ] T057 [US2] Add filter controls (All, Pass, Fail, Skipped) with dynamic count badges
-- [ ] T058 [US2] Add sort dropdown (Category, Score Asc/Desc, Tier) with JavaScript implementation
-- [ ] T059 [US2] Add search box with real-time attribute filtering
-- [ ] T060 [US2] Implement certification ladder with active level highlighting
-- [ ] T061 [US2] Add responsive breakpoints for mobile/tablet/desktop per contracts/report-html-schema.md
-- [ ] T062 [US2] Integrate HTMLReporter into Scanner workflow (dual-format generation per FR-005, FR-019)
-- [ ] T063 [US2] Add timestamp-based filename with latest symlink per research.md (report-2025-11-20T14-30-00.html)
-- [ ] T064 [US2] Verify HTML report works offline with no CDN dependencies (FR-003, SC-003)
+- [X] T047 [P] [US2] Create Jinja2 template in src/agentready/templates/report.html.j2 with structure from contracts/report-html-schema.md
+- [X] T048 [P] [US2] Add embedded CSS in template (header, controls, summary cards, findings, certification ladder, footer)
+- [X] T049 [P] [US2] Add embedded JavaScript in template (filtering by status, sorting by score/tier/category, search, smooth scroll)
+- [X] T050 [P] [US2] Implement BaseReporter interface in src/agentready/reporters/base.py with generate() method
+- [X] T051 [US2] Implement HTMLReporter in src/agentready/reporters/html.py extending BaseReporter
+- [X] T052 [US2] Add Jinja2 template rendering with Assessment data embedded as JSON constant
+- [X] T053 [US2] Implement collapsible sections using HTML5 details/summary elements per contracts/report-html-schema.md
+- [X] T054 [US2] Add color-coded score indicators (red <40, yellow 40-74, green 75+) per contracts/report-html-schema.md
+- [X] T055 [US2] Add tier badges with color coding (Tier 1 red, Tier 2 orange, Tier 3 yellow, Tier 4 green)
+- [X] T056 [US2] Implement category summary cards with progress bars and click-to-scroll behavior
+- [X] T057 [US2] Add filter controls (All, Pass, Fail, Skipped) with dynamic count badges
+- [X] T058 [US2] Add sort dropdown (Category, Score Asc/Desc, Tier) with JavaScript implementation
+- [X] T059 [US2] Add search box with real-time attribute filtering
+- [X] T060 [US2] Implement certification ladder with active level highlighting
+- [X] T061 [US2] Add responsive breakpoints for mobile/tablet/desktop per contracts/report-html-schema.md
+- [X] T062 [US2] Integrate HTMLReporter into Scanner workflow (dual-format generation per FR-005, FR-019)
+- [X] T063 [US2] Add timestamp-based filename with latest symlink per research.md (report-2025-11-20T14-30-00.html)
+- [X] T064 [US2] Verify HTML report works offline with no CDN dependencies (FR-003, SC-003)
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should produce both JSON and interactive HTML
 

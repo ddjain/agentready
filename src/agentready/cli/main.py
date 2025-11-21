@@ -22,6 +22,7 @@ from ..assessors.stub_assessors import (
 )
 from ..assessors.testing import PreCommitHooksAssessor, TestCoverageAssessor
 from ..models.config import Config
+from ..reporters.html import HTMLReporter
 from ..services.research_loader import ResearchLoader
 from ..services.scanner import Scanner
 
@@ -156,25 +157,33 @@ def run_assessment(repository_path, verbose, output_dir, config_path):
             traceback.print_exc()
         sys.exit(1)
 
+    # Generate timestamp for file naming
+    timestamp = assessment.timestamp.strftime("%Y%m%d-%H%M%S")
+
     # Save JSON output
-    json_file = (
-        output_path
-        / f"assessment-{assessment.timestamp.strftime('%Y%m%d-%H%M%S')}.json"
-    )
+    json_file = output_path / f"assessment-{timestamp}.json"
     with open(json_file, "w", encoding="utf-8") as f:
         json.dump(assessment.to_dict(), f, indent=2)
 
-    # Create latest symlink
-    latest_json = output_path / "assessment-latest.json"
-    if latest_json.exists():
-        latest_json.unlink()
-    try:
-        latest_json.symlink_to(json_file.name)
-    except OSError:
-        # Windows doesn't support symlinks easily, just copy
-        import shutil
+    # Generate HTML report
+    html_reporter = HTMLReporter()
+    html_file = output_path / f"report-{timestamp}.html"
+    html_reporter.generate(assessment, html_file)
 
-        shutil.copy(json_file, latest_json)
+    # Create latest symlinks
+    latest_json = output_path / "assessment-latest.json"
+    latest_html = output_path / "report-latest.html"
+
+    for latest, target in [(latest_json, json_file), (latest_html, html_file)]:
+        if latest.exists():
+            latest.unlink()
+        try:
+            latest.symlink_to(target.name)
+        except OSError:
+            # Windows doesn't support symlinks easily, just copy
+            import shutil
+
+            shutil.copy(target, latest)
 
     if verbose:
         click.echo(f"\n{'=' * 50}")
@@ -190,6 +199,7 @@ def run_assessment(repository_path, verbose, output_dir, config_path):
     click.echo(f"  Duration: {assessment.duration_seconds:.1f}s")
     click.echo(f"\nReports generated:")
     click.echo(f"  JSON: {json_file}")
+    click.echo(f"  HTML: {html_file}")
 
 
 def load_config(config_path: Path) -> Config:
