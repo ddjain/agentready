@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/ambient-code/agentready/compare/v1.9.0...v1.10.0) (2025-11-22)
+
+
+### Features
+
+* Add customizable HTML report themes with runtime switching ([#46](https://github.com/ambient-code/agentready/issues/46)) ([7eeaf84](https://github.com/ambient-code/agentready/commit/7eeaf84388d1b02bac16bf4249c5e16f9e312580)), closes [hi#contrast](https://github.com/hi/issues/contrast) [#10](https://github.com/ambient-code/agentready/issues/10)
+
 # [1.9.0](https://github.com/ambient-code/agentready/compare/v1.8.0...v1.9.0) (2025-11-22)
 
 
