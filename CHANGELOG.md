@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/ambient-code/agentready/compare/v1.11.0...v1.12.0) (2025-11-22)
+
+
+### Features
+
+* Add security & quality improvements from code review ([#49](https://github.com/ambient-code/agentready/issues/49)) ([889d6ed](https://github.com/ambient-code/agentready/commit/889d6edc6c79e6d60ed9a5a5e9e70f55b78da76e))
+
 # [1.11.0](https://github.com/ambient-code/agentready/compare/v1.10.0...v1.11.0) (2025-11-22)
 
 
