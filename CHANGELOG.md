@@ -1,3 +1,10 @@
+## [1.12.3](https://github.com/ambient-code/agentready/compare/v1.12.2...v1.12.3) (2025-11-22)
+
+
+### Bug Fixes
+
+* Add comprehensive subprocess security guardrails (fixes [#57](https://github.com/ambient-code/agentready/issues/57)) ([#66](https://github.com/ambient-code/agentready/issues/66)) ([454b80e](https://github.com/ambient-code/agentready/commit/454b80e20d45e451a1b05aeff4c4bbe770b6d5a7))
+
 ## [1.12.2](https://github.com/ambient-code/agentready/compare/v1.12.1...v1.12.2) (2025-11-22)
 
 
