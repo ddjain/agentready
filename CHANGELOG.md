@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/ambient-code/agentready/compare/v1.24.0...v1.25.0) (2025-11-23)
+
+
+### Features
+
+* Auto-sync CLAUDE.md during semantic-release ([#101](https://github.com/ambient-code/agentready/issues/101)) ([36b48cb](https://github.com/ambient-code/agentready/commit/36b48cbb342251ee6ad248aec8b2c7a83bd085c8))
+
 # [1.24.0](https://github.com/ambient-code/agentready/compare/v1.23.0...v1.24.0) (2025-11-23)
 
 
