@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/ambient-code/agentready/compare/v1.28.0...v1.29.0) (2025-11-23)
+
+
+### Features
+
+* add GitHub organization scanning to assess-batch command ([#118](https://github.com/ambient-code/agentready/issues/118)) ([e306314](https://github.com/ambient-code/agentready/commit/e306314bacbf7a124db2c160adc2c49ee3e14542))
+
 # [1.28.0](https://github.com/ambient-code/agentready/compare/v1.27.2...v1.28.0) (2025-11-23)
 
 
