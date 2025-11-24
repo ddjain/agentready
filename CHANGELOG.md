@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/ambient-code/agentready/compare/v1.29.0...v2.0.0) (2025-11-24)
+
+
+### Features
+
+* Rename 'learn' command to 'extract-skills' for clarity ([#125](https://github.com/ambient-code/agentready/issues/125)) ([64d6563](https://github.com/ambient-code/agentready/commit/64d65632a5c6b37e3193bfccd62ab0f8eb7c4eb6)), closes [hi#scoring](https://github.com/hi/issues/scoring) [#123](https://github.com/ambient-code/agentready/issues/123)
+
+
+### BREAKING CHANGES
+
+* Users must update scripts from 'agentready learn'
+to 'agentready extract-skills'. All flags and options remain identical.
+
 # [1.29.0](https://github.com/ambient-code/agentready/compare/v1.28.0...v1.29.0) (2025-11-23)
 
 
