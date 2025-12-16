@@ -181,41 +181,6 @@ jobs:
             
             Do NOT post any comment yet - you will self-review your analysis first.
 
-      - name: Extract analysis decision
-        if: steps.issue-context.outputs.skip_pr_creation != 'true'
-        id: extract-decision
-        run: |
-          if [ -f .github/agentready-dev-logs/analysis-decision.txt ]; then
-            DECISION=$(cat .github/agentready-dev-logs/analysis-decision.txt | tr -d '\n' | head -c 50)
-            # Remove "OUTPUT=" prefix if present
-            DECISION=$(echo "$DECISION" | sed 's/^OUTPUT=//' | sed 's/^output=//')
-            # Extract just the value (create_pr or provide_feedback)
-            DECISION=$(echo "$DECISION" | grep -oE "(create_pr|provide_feedback)" | head -1)
-            if [ -z "$DECISION" ]; then
-              DECISION="provide_feedback"
-            fi
-            echo "decision=$DECISION" >> $GITHUB_OUTPUT
-          else
-            echo "decision=provide_feedback" >> $GITHUB_OUTPUT
-            echo "Warning: Decision file not found, defaulting to provide_feedback" >&2
-          fi
-
-          if [ -f .github/agentready-dev-logs/analysis-reasoning.txt ]; then
-            REASONING=$(cat .github/agentready-dev-logs/analysis-reasoning.txt)
-            echo "reasoning<<EOF" >> $GITHUB_OUTPUT
-            echo "$REASONING" >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
-          else
-            echo "reasoning=Analysis completed" >> $GITHUB_OUTPUT
-          fi
-
-          if [ -f .github/agentready-dev-logs/analysis-branch.txt ]; then
-            BRANCH_SUGGESTION=$(cat .github/agentready-dev-logs/analysis-branch.txt | tr -d '\n' | head -c 50)
-            echo "branch_suggestion=$BRANCH_SUGGESTION" >> $GITHUB_OUTPUT
-          else
-            echo "branch_suggestion=" >> $GITHUB_OUTPUT
-          fi
-
       - name: Verify analysis files exist
         if: steps.issue-context.outputs.skip_pr_creation != 'true'
         id: verify-analysis-files
@@ -234,6 +199,33 @@ jobs:
           
           echo "✅ Analysis files verified"
           echo "files_exist=true" >> $GITHUB_OUTPUT
+
+      - name: Extract analysis decision
+        if: steps.issue-context.outputs.skip_pr_creation != 'true' && steps.verify-analysis-files.outputs.files_exist == 'true'
+        id: extract-decision
+        run: |
+          DECISION=$(cat .github/agentready-dev-logs/analysis-decision.txt | tr -d '\n' | head -c 50)
+          # Remove "OUTPUT=" prefix if present
+          DECISION=$(echo "$DECISION" | sed 's/^OUTPUT=//' | sed 's/^output=//')
+          # Extract just the value (create_pr or provide_feedback)
+          DECISION=$(echo "$DECISION" | grep -oE "(create_pr|provide_feedback)" | head -1)
+          if [ -z "$DECISION" ]; then
+            echo "ERROR: Invalid decision value in analysis-decision.txt. Expected 'create_pr' or 'provide_feedback'." >&2
+            exit 1
+          fi
+          echo "decision=$DECISION" >> $GITHUB_OUTPUT
+
+          REASONING=$(cat .github/agentready-dev-logs/analysis-reasoning.txt)
+          echo "reasoning<<EOF" >> $GITHUB_OUTPUT
+          echo "$REASONING" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+          if [ -f .github/agentready-dev-logs/analysis-branch.txt ]; then
+            BRANCH_SUGGESTION=$(cat .github/agentready-dev-logs/analysis-branch.txt | tr -d '\n' | head -c 50)
+            echo "branch_suggestion=$BRANCH_SUGGESTION" >> $GITHUB_OUTPUT
+          else
+            echo "branch_suggestion=" >> $GITHUB_OUTPUT
+          fi
 
       - name: Self-review issue analysis
         if: steps.issue-context.outputs.skip_pr_creation != 'true' && steps.extract-decision.outputs.decision != '' && steps.verify-analysis-files.outputs.files_exist == 'true'
@@ -255,10 +247,14 @@ jobs:
             3. Is your analysis thorough and accurate?
             4. Does your reasoning help humans make informed decisions?
             
-            If you find issues with your analysis, update the decision/reasoning files and write REVIEW_PASSED=true.
-            If your analysis is comprehensive and accurate, write REVIEW_PASSED=true to .github/agentready-dev-logs/analysis-review-passed.txt.
+            If you find issues with your analysis that need to be added:
+            - Update the decision/reasoning files with the improved analysis
+            - After updating, write REVIEW_PASSED=true to .github/agentready-dev-logs/analysis-review-passed.txt
             
-            The goal is to ensure the issue is thoroughly analyzed before proceeding.
+            If your analysis is comprehensive and accurate (no issues found):
+            - Write REVIEW_PASSED=true to .github/agentready-dev-logs/analysis-review-passed.txt
+            
+            The goal is to ensure the issue is thoroughly analyzed before proceeding. Only write REVIEW_PASSED=true after you've verified the analysis is complete and accurate.
             
             Do NOT post any comment yet.
 
