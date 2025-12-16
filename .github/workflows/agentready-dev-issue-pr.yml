@@ -340,6 +340,8 @@ jobs:
       - name: Get default branch
         if: steps.issue-context.outputs.skip_pr_creation != 'true' && steps.check-review.outputs.review_passed == 'true' && steps.check-review.outputs.final_decision == 'create_pr'
         id: default-branch
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           DEFAULT_BRANCH=$(gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name')
           echo "branch=$DEFAULT_BRANCH" >> $GITHUB_OUTPUT
@@ -348,7 +350,7 @@ jobs:
         if: steps.issue-context.outputs.skip_pr_creation != 'true' && steps.check-review.outputs.review_passed == 'true' && steps.check-review.outputs.final_decision == 'create_pr'
         id: create-branch
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           ISSUE_NUMBER: ${{ steps.issue-context.outputs.issue_number }}
           ISSUE_TITLE: ${{ steps.issue-context.outputs.issue_title }}
           BRANCH_SUGGESTION: ${{ steps.extract-decision.outputs.branch_suggestion || 'implementation' }}
