@@ -32,14 +32,6 @@ jobs:
       github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
-      - name: Initialize activity log
-        id: init-log
-        run: |
-          mkdir -p .github/agentready-dev-logs
-          LOG_FILE=".github/agentready-dev-logs/activity-$(date +%Y%m%d-%H%M%S)-${{ github.run_id }}.jsonl"
-          echo "log_file=$LOG_FILE" >> $GITHUB_OUTPUT
-          echo "{\"timestamp\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"event\":\"workflow_started\",\"run_id\":\"${{ github.run_id }}\",\"event_name\":\"${{ github.event_name }}\"}" >> "$LOG_FILE"
-
       - name: Get issue context
         id: issue-context
         uses: actions/github-script@v8
@@ -116,16 +108,26 @@ jobs:
               commentBody,
             };
 
-      - name: Log context
-        run: |
-          echo "{\"timestamp\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"agent\":\"context_gatherer\",\"action\":\"gathered_issue_context\",\"issue_number\":\"${{ steps.issue-context.outputs.issue_number }}\",\"is_pr\":\"${{ steps.issue-context.outputs.is_pr }}\",\"skip_pr_creation\":\"${{ steps.issue-context.outputs.skip_pr_creation }}\"}" >> "${{ steps.init-log.outputs.log_file }}"
-
       - name: Checkout repository
         if: steps.issue-context.outputs.skip_pr_creation != 'true' || steps.issue-context.outputs.is_comment_trigger == 'true'
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Initialize activity log
+        if: steps.issue-context.outputs.skip_pr_creation != 'true' || steps.issue-context.outputs.is_comment_trigger == 'true'
+        id: init-log
+        run: |
+          mkdir -p .github/agentready-dev-logs
+          LOG_FILE=".github/agentready-dev-logs/activity-$(date +%Y%m%d-%H%M%S)-${{ github.run_id }}.jsonl"
+          echo "log_file=$LOG_FILE" >> $GITHUB_OUTPUT
+          echo "{\"timestamp\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"event\":\"workflow_started\",\"run_id\":\"${{ github.run_id }}\",\"event_name\":\"${{ github.event_name }}\"}" >> "$LOG_FILE"
+
+      - name: Log context
+        if: steps.issue-context.outputs.skip_pr_creation != 'true' || steps.issue-context.outputs.is_comment_trigger == 'true'
+        run: |
+          echo "{\"timestamp\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"agent\":\"context_gatherer\",\"action\":\"gathered_issue_context\",\"issue_number\":\"${{ steps.issue-context.outputs.issue_number }}\",\"is_pr\":\"${{ steps.issue-context.outputs.is_pr }}\",\"skip_pr_creation\":\"${{ steps.issue-context.outputs.skip_pr_creation }}\"}" >> "${{ steps.init-log.outputs.log_file }}"
 
       - name: Configure Git
         if: steps.issue-context.outputs.skip_pr_creation != 'true' || steps.issue-context.outputs.is_comment_trigger == 'true'
