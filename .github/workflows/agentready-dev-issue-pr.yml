@@ -201,7 +201,7 @@ jobs:
             echo "branch_suggestion=" >> $GITHUB_OUTPUT
           fi
 
-      - name: Review analysis before proceeding
+      - name: Self-review issue analysis
         if: steps.issue-context.outputs.skip_pr_creation != 'true' && steps.extract-decision.outputs.decision != ''
         id: self-review-analysis
         uses: anthropics/claude-code-action@v1
@@ -209,20 +209,23 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
-            Review the analysis from the previous step using the /review-agentready command.
-
+            Self-review the issue analysis using the /review-agentready command.
+            
+            Re-read the original issue #${{ steps.issue-context.outputs.issue_number }} and your analysis.
             Read the decision file: cat .github/agentready-dev-logs/analysis-decision.txt
             Read the reasoning file: cat .github/agentready-dev-logs/analysis-reasoning.txt
-
-            Apply the review-agentready.md review process to evaluate:
-            1. Is the analysis accurate and complete?
-            2. Are security considerations properly addressed?
-            3. Is the feedback helpful and actionable?
-            4. Does it follow AgentReady standards?
-
-            If the analysis passes review, write REVIEW_PASSED=true to .github/agentready-dev-logs/analysis-review-passed.txt and keep the original decision.
-            If it needs improvement, write REVIEW_PASSED=false to .github/agentready-dev-logs/analysis-review-passed.txt and write improved decision/reasoning to the files.
-
+            
+            Check the issue itself for:
+            1. Did you miss any security concerns in the issue description?
+            2. Are there implementation risks you didn't consider?
+            3. Is your analysis thorough and accurate?
+            4. Does your reasoning help humans make informed decisions?
+            
+            If you find issues with your analysis, update the decision/reasoning files and write REVIEW_PASSED=true.
+            If your analysis is comprehensive and accurate, write REVIEW_PASSED=true to .github/agentready-dev-logs/analysis-review-passed.txt.
+            
+            The goal is to ensure the issue is thoroughly analyzed before proceeding.
+            
             Do NOT post any comment yet.
 
       - name: Check review result
@@ -398,47 +401,49 @@ jobs:
               prUrl: pr.data.html_url,
             };
 
-      - name: Review draft PR
+      - name: Review draft PR code
         if: steps.issue-context.outputs.skip_pr_creation != 'true' && steps.check-review.outputs.review_passed == 'true' && steps.check-review.outputs.final_decision == 'create_pr' && steps.create-pr.outputs.pr_number != ''
-        id: review-pr
+        id: review-pr-code
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
             Run the /review-agentready command on pull request #${{ steps.create-pr.outputs.pr_number }}.
-
-            Provide a comprehensive review focusing on:
+            
+            Review the actual CODE in the PR, focusing on:
             - AgentReady attribute compliance
             - Security issues (take special care)
-            - Code quality
+            - Code quality and correctness
             - Best practices
-
+            
             Generate a brief, structured review comment (2-3 lines summary, use collapsible sections for details).
             Write the review to .github/agentready-dev-logs/pr-review.txt
-            Do NOT post the comment yet - you will review your own output first.
+            Do NOT post the comment yet - you will self-review the CODE first.
 
-      - name: Self-review PR review
+      - name: Self-review the PR code
         if: steps.issue-context.outputs.skip_pr_creation != 'true' && steps.check-review.outputs.review_passed == 'true' && steps.check-review.outputs.final_decision == 'create_pr' && steps.create-pr.outputs.pr_number != ''
-        id: self-review-pr-review
+        id: self-review-pr-code
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
-            Review your PR review output using the /review-agentready command.
-
-            Read the review file: cat .github/agentready-dev-logs/pr-review.txt
-
-            Evaluate:
-            1. Is the review accurate and complete?
-            2. Are security concerns properly highlighted?
-            3. Is the feedback helpful for reviewers?
-            4. Does it follow the brief, structured format requirement?
-
-            If it passes review, write REVIEW_PASSED=true to .github/agentready-dev-logs/pr-review-passed.txt and keep the review.
-            If it needs improvement, write REVIEW_PASSED=false and update .github/agentready-dev-logs/pr-review.txt with improved review.
-
+            Self-review the actual CODE in pull request #${{ steps.create-pr.outputs.pr_number }} using the /review-agentready command.
+            
+            Check the code itself for:
+            1. Security vulnerabilities (path traversal, injection, etc.)
+            2. Code quality issues (bugs, logic errors, edge cases)
+            3. AgentReady attribute compliance
+            4. Best practices violations
+            
+            Compare your findings with the review in .github/agentready-dev-logs/pr-review.txt.
+            If you find additional issues in the code that weren't in the review, update the review file.
+            If the code review is comprehensive and accurate, write REVIEW_PASSED=true to .github/agentready-dev-logs/pr-review-passed.txt.
+            If you found issues that need to be added to the review, update .github/agentready-dev-logs/pr-review.txt and write REVIEW_PASSED=true.
+            
+            The goal is to ensure the CODE is thoroughly reviewed before showing it to humans.
+            
             Do NOT post any comment yet.
 
       - name: Extract PR review
@@ -453,7 +458,7 @@ jobs:
           else
             echo "review=Review completed" >> $GITHUB_OUTPUT
           fi
-
+          
           if [ -f .github/agentready-dev-logs/pr-review-passed.txt ]; then
             REVIEW_PASSED=$(cat .github/agentready-dev-logs/pr-review-passed.txt | tr -d '\n' | grep -i "true" || echo "false")
             echo "review_passed=$REVIEW_PASSED" >> $GITHUB_OUTPUT
@@ -462,7 +467,7 @@ jobs:
           fi
 
       - name: Post PR review and link to issue
-        if: steps.issue-context.outputs.skip_pr_creation != 'true' && steps.check-review.outputs.review_passed == 'true' && steps.check-review.outputs.final_decision == 'create_pr' && steps.extract-pr-review.outputs.review_passed == 'true'
+        if: steps.issue-context.outputs.skip_pr_creation != 'true' && steps.check-review.outputs.review_passed == 'true' && steps.check-review.outputs.final_decision == 'create_pr' && steps.extract-pr-review.outputs.review_passed == 'true' && steps.self-review-pr-code.outputs.REVIEW_PASSED == 'true'
         uses: actions/github-script@v8
         env:
           LOG_FILE: ${{ steps.init-log.outputs.log_file }}
@@ -515,19 +520,19 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
             You are the @agentready-dev agent. Someone requested analysis with: "${{ steps.issue-context.outputs.comment_body }}"
-
+            
             Issue/PR context:
             - Issue/PR #${{ steps.issue-context.outputs.issue_number }}
             - Title: ${{ steps.issue-context.outputs.issue_title }}
             - Body: ${{ steps.issue-context.outputs.issue_body }}
-
-            If this is a PR (is_pr=${{ steps.issue-context.outputs.is_pr }}), run the /review-agentready command on it.
+            
+            If this is a PR (is_pr=${{ steps.issue-context.outputs.is_pr }}), run the /review-agentready command on the CODE in the PR.
             If this is an issue, analyze the issue description and proposed implementation using the review-agentready.md process.
-
+            
             Provide a brief, structured analysis (2-3 lines summary, use collapsible sections for details).
             Focus on what a reviewer would need to know.
             Write analysis to .github/agentready-dev-logs/adhoc-analysis.txt
-            Do NOT post any comment yet - you will review your own output first.
+            Do NOT post any comment yet - you will self-review the CODE/issue first.
 
       - name: Self-review ad-hoc analysis
         if: steps.issue-context.outputs.is_comment_trigger == 'true'
@@ -537,19 +542,24 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
-            Review your analysis output using the /review-agentready command.
-
-            Read the analysis file: cat .github/agentready-dev-logs/adhoc-analysis.txt
-
-            Evaluate:
-            1. Is the analysis accurate and complete?
-            2. Are security considerations properly addressed?
-            3. Is it brief and helpful for reviewers?
-            4. Does it follow the structured format requirement?
-
-            If it passes review, write REVIEW_PASSED=true to .github/agentready-dev-logs/adhoc-analysis-passed.txt and keep the analysis.
-            If it needs improvement, write REVIEW_PASSED=false and update .github/agentready-dev-logs/adhoc-analysis.txt with improved analysis.
-
+            Self-review the actual CODE or issue using the /review-agentready command.
+            
+            If this is a PR (is_pr=${{ steps.issue-context.outputs.is_pr }}), review the CODE in PR #${{ steps.issue-context.outputs.issue_number }} again.
+            If this is an issue, re-read issue #${{ steps.issue-context.outputs.issue_number }}.
+            
+            Read your analysis file: cat .github/agentready-dev-logs/adhoc-analysis.txt
+            
+            Check for:
+            1. Security issues you might have missed in the code/issue
+            2. Code quality problems or bugs you didn't catch
+            3. Important details that reviewers need to know
+            4. Is your analysis thorough and accurate?
+            
+            If you find issues you missed, update .github/agentready-dev-logs/adhoc-analysis.txt and write REVIEW_PASSED=true.
+            If your analysis is comprehensive, write REVIEW_PASSED=true to .github/agentready-dev-logs/adhoc-analysis-passed.txt.
+            
+            The goal is to ensure the CODE/issue is thoroughly reviewed before showing it to humans.
+            
             Do NOT post any comment yet.
 
       - name: Extract ad-hoc analysis
