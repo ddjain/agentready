@@ -376,13 +376,13 @@ jobs:
           git checkout -b "${BRANCH_NAME}"
 
           # Create initial commit with issue reference
+          mkdir -p .github/pr-placeholders
           echo "# Issue #${ISSUE_NUMBER}" > ".github/pr-placeholders/issue-${ISSUE_NUMBER}.md"
           echo "" >> ".github/pr-placeholders/issue-${ISSUE_NUMBER}.md"
           echo "This draft PR was automatically created from issue #${ISSUE_NUMBER}." >> ".github/pr-placeholders/issue-${ISSUE_NUMBER}.md"
           echo "" >> ".github/pr-placeholders/issue-${ISSUE_NUMBER}.md"
           echo "**Original Issue:** #${ISSUE_NUMBER}" >> ".github/pr-placeholders/issue-${ISSUE_NUMBER}.md"
 
-          mkdir -p .github/pr-placeholders
           git add ".github/pr-placeholders/issue-${ISSUE_NUMBER}.md"
           git commit -m "chore: create draft PR branch for issue #${ISSUE_NUMBER}"
 
