@@ -1,20 +1,26 @@
 {
-  "generated_at": "2026-01-15T05:50:29.917360Z",
+  "generated_at": "2026-01-15T05:52:32.117577Z",
   "total_repositories": 3,
   "overall": [
     {
       "repo": "ambient-code/agentready",
       "org": "ambient-code",
       "name": "agentready",
-      "score": 78.6,
+      "score": 78.4,
       "tier": "Gold",
       "language": "Unknown",
       "size": "Unknown",
-      "last_updated": "2025-12-03",
-      "url": "git@github.com:ambient-code/agentready.git",
-      "agentready_version": "2.9.0",
-      "research_version": "1.0.0",
+      "last_updated": "2026-01-15",
+      "url": "https://github.com/ambient-code/agentready",
+      "agentready_version": "2.22.1",
+      "research_version": "1.0.1",
       "history": [
+        {
+          "date": "2026-01-15",
+          "score": 78.4,
+          "agentready_version": "2.22.1",
+          "research_version": "1.0.1"
+        },
         {
           "date": "2025-12-03",
           "score": 78.6,
@@ -84,15 +90,21 @@
         "repo": "ambient-code/agentready",
         "org": "ambient-code",
         "name": "agentready",
-        "score": 78.6,
+        "score": 78.4,
         "tier": "Gold",
         "language": "Unknown",
         "size": "Unknown",
-        "last_updated": "2025-12-03",
-        "url": "git@github.com:ambient-code/agentready.git",
-        "agentready_version": "2.9.0",
-        "research_version": "1.0.0",
+        "last_updated": "2026-01-15",
+        "url": "https://github.com/ambient-code/agentready",
+        "agentready_version": "2.22.1",
+        "research_version": "1.0.1",
         "history": [
+          {
+            "date": "2026-01-15",
+            "score": 78.4,
+            "agentready_version": "2.22.1",
+            "research_version": "1.0.1"
+          },
           {
             "date": "2025-12-03",
             "score": 78.6,
@@ -163,15 +175,21 @@
         "repo": "ambient-code/agentready",
         "org": "ambient-code",
         "name": "agentready",
-        "score": 78.6,
+        "score": 78.4,
         "tier": "Gold",
         "language": "Unknown",
         "size": "Unknown",
-        "last_updated": "2025-12-03",
-        "url": "git@github.com:ambient-code/agentready.git",
-        "agentready_version": "2.9.0",
-        "research_version": "1.0.0",
+        "last_updated": "2026-01-15",
+        "url": "https://github.com/ambient-code/agentready",
+        "agentready_version": "2.22.1",
+        "research_version": "1.0.1",
         "history": [
+          {
+            "date": "2026-01-15",
+            "score": 78.4,
+            "agentready_version": "2.22.1",
+            "research_version": "1.0.1"
+          },
           {
             "date": "2025-12-03",
             "score": 78.6,
