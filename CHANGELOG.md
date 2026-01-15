@@ -1,3 +1,10 @@
+## [2.22.2](https://github.com/ambient-code/agentready/compare/v2.22.1...v2.22.2) (2026-01-15)
+
+
+### Bug Fixes
+
+* **ci:** use gh pr view for fork PR number lookup in coverage comment ([#253](https://github.com/ambient-code/agentready/issues/253)) ([1688362](https://github.com/ambient-code/agentready/commit/16883621e2ea41db6a1ec0a3a164fb0a87fe5f9c))
+
 ## [2.22.1](https://github.com/ambient-code/agentready/compare/v2.22.0...v2.22.1) (2026-01-15)
 
 
