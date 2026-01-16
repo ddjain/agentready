@@ -1,3 +1,10 @@
+# [2.23.0](https://github.com/ambient-code/agentready/compare/v2.22.3...v2.23.0) (2026-01-16)
+
+
+### Features
+
+* **assessors:** support AGENTS.md and @ references in CLAUDEmdAssessor ([#265](https://github.com/ambient-code/agentready/issues/265)) ([450ec25](https://github.com/ambient-code/agentready/commit/450ec2556dfc10b87b11d8971fb08aa13043730a)), closes [#244](https://github.com/ambient-code/agentready/issues/244)
+
 ## [2.22.3](https://github.com/ambient-code/agentready/compare/v2.22.2...v2.22.3) (2026-01-16)
 
 
