@@ -1,3 +1,10 @@
+# [2.25.0](https://github.com/ambient-code/agentready/compare/v2.24.1...v2.25.0) (2026-02-04)
+
+
+### Features
+
+* add dgutride/odh-dashboard to leaderboard ([#268](https://github.com/ambient-code/agentready/issues/268)) ([f4911b2](https://github.com/ambient-code/agentready/commit/f4911b241e8e4f75ff05a96ee1d0a09d62b34508))
+
 ## [2.24.1](https://github.com/ambient-code/agentready/compare/v2.24.0...v2.24.1) (2026-01-30)
 
 
