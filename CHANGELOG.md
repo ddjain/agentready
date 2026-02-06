@@ -1,3 +1,10 @@
+## [2.25.2](https://github.com/ambient-code/agentready/compare/v2.25.1...v2.25.2) (2026-02-06)
+
+
+### Bug Fixes
+
+* schema backwards compat for attributes_skipped key ([#277](https://github.com/ambient-code/agentready/issues/277)) ([841bcc4](https://github.com/ambient-code/agentready/commit/841bcc41e3c5deb1f9a1c0c87cea8c27adbbfbfe))
+
 ## [2.25.1](https://github.com/ambient-code/agentready/compare/v2.25.0...v2.25.1) (2026-02-06)
 
 
