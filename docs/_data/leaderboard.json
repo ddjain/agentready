@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-06T17:47:48.677065Z",
-  "total_repositories": 6,
+  "generated_at": "2026-02-06T17:48:04.870697Z",
+  "total_repositories": 7,
   "overall": [
     {
       "repo": "ambient-code/agentready",
@@ -59,6 +59,31 @@
       }
     },
     {
+      "repo": "python-wheel-build/fromager",
+      "org": "python-wheel-build",
+      "name": "fromager",
+      "score": 63.5,
+      "tier": "Silver",
+      "language": "Unknown",
+      "size": "Unknown",
+      "last_updated": "2026-02-06",
+      "url": "https://github.com/python-wheel-build/fromager.git",
+      "agentready_version": "2.25.0",
+      "research_version": "1.0.1",
+      "history": [
+        {
+          "date": "2026-02-06",
+          "score": 63.5,
+          "agentready_version": "2.25.0",
+          "research_version": "1.0.1"
+        }
+      ],
+      "rank": 3,
+      "lang_rank": {
+        "Unknown": 3
+      }
+    },
+    {
       "repo": "ambient-code/reference",
       "org": "ambient-code",
       "name": "reference",
@@ -78,9 +103,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 3,
+      "rank": 4,
       "lang_rank": {
-        "Unknown": 3
+        "Unknown": 4
       }
     },
     {
@@ -103,9 +128,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 4,
+      "rank": 5,
       "lang_rank": {
-        "Unknown": 4
+        "Unknown": 5
       }
     },
     {
@@ -128,9 +153,9 @@
           "research_version": "1.0.0"
         }
       ],
-      "rank": 5,
+      "rank": 6,
       "lang_rank": {
-        "Unknown": 5
+        "Unknown": 6
       }
     },
     {
@@ -153,9 +178,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 6,
+      "rank": 7,
       "lang_rank": {
-        "Unknown": 6
+        "Unknown": 7
       }
     }
   ],
@@ -218,6 +243,31 @@
         }
       },
       {
+        "repo": "python-wheel-build/fromager",
+        "org": "python-wheel-build",
+        "name": "fromager",
+        "score": 63.5,
+        "tier": "Silver",
+        "language": "Unknown",
+        "size": "Unknown",
+        "last_updated": "2026-02-06",
+        "url": "https://github.com/python-wheel-build/fromager.git",
+        "agentready_version": "2.25.0",
+        "research_version": "1.0.1",
+        "history": [
+          {
+            "date": "2026-02-06",
+            "score": 63.5,
+            "agentready_version": "2.25.0",
+            "research_version": "1.0.1"
+          }
+        ],
+        "rank": 3,
+        "lang_rank": {
+          "Unknown": 3
+        }
+      },
+      {
         "repo": "ambient-code/reference",
         "org": "ambient-code",
         "name": "reference",
@@ -237,9 +287,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 3,
+        "rank": 4,
         "lang_rank": {
-          "Unknown": 3
+          "Unknown": 4
         }
       },
       {
@@ -262,9 +312,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 4,
+        "rank": 5,
         "lang_rank": {
-          "Unknown": 4
+          "Unknown": 5
         }
       },
       {
@@ -287,9 +337,9 @@
             "research_version": "1.0.0"
           }
         ],
-        "rank": 5,
+        "rank": 6,
         "lang_rank": {
-          "Unknown": 5
+          "Unknown": 6
         }
       },
       {
@@ -312,9 +362,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 6,
+        "rank": 7,
         "lang_rank": {
-          "Unknown": 6
+          "Unknown": 7
         }
       }
     ]
@@ -378,6 +428,31 @@
         }
       },
       {
+        "repo": "python-wheel-build/fromager",
+        "org": "python-wheel-build",
+        "name": "fromager",
+        "score": 63.5,
+        "tier": "Silver",
+        "language": "Unknown",
+        "size": "Unknown",
+        "last_updated": "2026-02-06",
+        "url": "https://github.com/python-wheel-build/fromager.git",
+        "agentready_version": "2.25.0",
+        "research_version": "1.0.1",
+        "history": [
+          {
+            "date": "2026-02-06",
+            "score": 63.5,
+            "agentready_version": "2.25.0",
+            "research_version": "1.0.1"
+          }
+        ],
+        "rank": 3,
+        "lang_rank": {
+          "Unknown": 3
+        }
+      },
+      {
         "repo": "ambient-code/reference",
         "org": "ambient-code",
         "name": "reference",
@@ -397,9 +472,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 3,
+        "rank": 4,
         "lang_rank": {
-          "Unknown": 3
+          "Unknown": 4
         }
       },
       {
@@ -422,9 +497,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 4,
+        "rank": 5,
         "lang_rank": {
-          "Unknown": 4
+          "Unknown": 5
         }
       },
       {
@@ -447,9 +522,9 @@
             "research_version": "1.0.0"
           }
         ],
-        "rank": 5,
+        "rank": 6,
         "lang_rank": {
-          "Unknown": 5
+          "Unknown": 6
         }
       },
       {
@@ -472,9 +547,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 6,
+        "rank": 7,
         "lang_rank": {
-          "Unknown": 6
+          "Unknown": 7
         }
       }
     ]
