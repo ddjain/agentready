@@ -1,3 +1,10 @@
+## [2.27.1](https://github.com/ambient-code/agentready/compare/v2.27.0...v2.27.1) (2026-02-12)
+
+
+### Bug Fixes
+
+* resolve all broken links failing CI lychee check ([#288](https://github.com/ambient-code/agentready/issues/288)) ([4412c27](https://github.com/ambient-code/agentready/commit/4412c2740c2ddbf39dff446e9ab5b25afd728558))
+
 # [2.27.0](https://github.com/ambient-code/agentready/compare/v2.26.0...v2.27.0) (2026-02-09)
 
 
