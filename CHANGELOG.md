@@ -1,3 +1,10 @@
+## [2.27.2](https://github.com/ambient-code/agentready/compare/v2.27.1...v2.27.2) (2026-02-16)
+
+
+### Bug Fixes
+
+* Improve CLAUDE.md generation prompt and add prompt loading for future LLM integrations [#283](https://github.com/ambient-code/agentready/issues/283)  ([#284](https://github.com/ambient-code/agentready/issues/284)) ([c0aeae4](https://github.com/ambient-code/agentready/commit/c0aeae402a69a7c08190c98fb55a7eb521d04e83))
+
 ## [2.27.1](https://github.com/ambient-code/agentready/compare/v2.27.0...v2.27.1) (2026-02-12)
 
 
