@@ -1,6 +1,7 @@
 """Align command for automated remediation."""
 
 import sys
+import textwrap
 from pathlib import Path
 
 import click
@@ -167,7 +168,7 @@ def align(repository, dry_run, attributes, interactive):
     click.echo("Changes to be applied:\n")
     for i, fix in enumerate(fix_plan.fixes, 1):
         click.echo(f"  {i}. [{fix.attribute_id}] {fix.description}")
-        click.echo(f"     {fix.preview()}")
+        click.echo(textwrap.indent(fix.preview(), "     "))
         click.echo(f"     Points: +{fix.points_gained:.1f}\n")
 
     # Step 3: Confirm or apply
