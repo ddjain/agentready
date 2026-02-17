@@ -1,3 +1,10 @@
+## [2.27.4](https://github.com/ambient-code/agentready/compare/v2.27.3...v2.27.4) (2026-02-17)
+
+
+### Bug Fixes
+
+* properly indent multi-line fix previews in align output ([#289](https://github.com/ambient-code/agentready/issues/289)) ([4e36cb5](https://github.com/ambient-code/agentready/commit/4e36cb53ee6ca67f53853fc5298d3e0484b65588)), closes [#285](https://github.com/ambient-code/agentready/issues/285)
+
 ## [2.27.3](https://github.com/ambient-code/agentready/compare/v2.27.2...v2.27.3) (2026-02-16)
 
 
