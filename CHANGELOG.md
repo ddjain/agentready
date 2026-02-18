@@ -1,3 +1,15 @@
+# [2.28.0](https://github.com/ambient-code/agentready/compare/v2.27.5...v2.28.0) (2026-02-18)
+
+
+### Bug Fixes
+
+* Use GitHub URL instead of local one ([#297](https://github.com/ambient-code/agentready/issues/297)) ([5abc7c2](https://github.com/ambient-code/agentready/commit/5abc7c221188b6d37f1316376d8c3d0b82017c16))
+
+
+### Features
+
+* add feast-dev/feast to leaderboard ([#293](https://github.com/ambient-code/agentready/issues/293)) ([c894ce9](https://github.com/ambient-code/agentready/commit/c894ce9f4cce568f22bc7d67fd32ca4b2399e2d2))
+
 ## [2.27.5](https://github.com/ambient-code/agentready/compare/v2.27.4...v2.27.5) (2026-02-17)
 
 
