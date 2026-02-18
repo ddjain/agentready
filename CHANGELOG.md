@@ -1,3 +1,10 @@
+## [2.28.1](https://github.com/ambient-code/agentready/compare/v2.28.0...v2.28.1) (2026-02-18)
+
+
+### Bug Fixes
+
+* Enable workflow_dispatch for leaderboard update and regenerate data ([#299](https://github.com/ambient-code/agentready/issues/299)) ([091d9dd](https://github.com/ambient-code/agentready/commit/091d9dde9601356dbd0070adea5777cd62653d5b)), closes [#298](https://github.com/ambient-code/agentready/issues/298)
+
 # [2.28.0](https://github.com/ambient-code/agentready/compare/v2.27.5...v2.28.0) (2026-02-18)
 
 
