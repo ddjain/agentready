@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-18T15:41:53.494737Z",
-  "total_repositories": 9,
+  "generated_at": "2026-02-19T19:27:28.971228Z",
+  "total_repositories": 10,
   "overall": [
     {
       "repo": "ambient-code/agentready",
@@ -34,6 +34,31 @@
       }
     },
     {
+      "repo": "dbasunag/opendatahub-tests",
+      "org": "dbasunag",
+      "name": "opendatahub-tests",
+      "score": 69.9,
+      "tier": "Silver",
+      "language": "Unknown",
+      "size": "Unknown",
+      "last_updated": "2026-02-18",
+      "url": "https://github.com/dbasunag/opendatahub-tests",
+      "agentready_version": "2.28.0",
+      "research_version": "1.0.1",
+      "history": [
+        {
+          "date": "2026-02-18",
+          "score": 69.9,
+          "agentready_version": "2.28.0",
+          "research_version": "1.0.1"
+        }
+      ],
+      "rank": 2,
+      "lang_rank": {
+        "Unknown": 2
+      }
+    },
+    {
       "repo": "opendatahub-io/ai-helpers",
       "org": "opendatahub-io",
       "name": "ai-helpers",
@@ -59,9 +84,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 2,
+      "rank": 3,
       "lang_rank": {
-        "Unknown": 2
+        "Unknown": 3
       }
     },
     {
@@ -84,9 +109,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 3,
+      "rank": 4,
       "lang_rank": {
-        "Unknown": 3
+        "Unknown": 4
       }
     },
     {
@@ -109,9 +134,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 4,
+      "rank": 5,
       "lang_rank": {
-        "Unknown": 4
+        "Unknown": 5
       }
     },
     {
@@ -131,31 +156,6 @@
           "date": "2026-02-17",
           "score": 61.6,
           "agentready_version": "2.27.3",
-          "research_version": "1.0.1"
-        }
-      ],
-      "rank": 5,
-      "lang_rank": {
-        "Unknown": 5
-      }
-    },
-    {
-      "repo": "ambient-code/reference",
-      "org": "ambient-code",
-      "name": "reference",
-      "score": 55.8,
-      "tier": "Bronze",
-      "language": "Unknown",
-      "size": "Unknown",
-      "last_updated": "2026-01-15",
-      "url": "https://github.com/ambient-code/reference",
-      "agentready_version": "2.22.1",
-      "research_version": "1.0.1",
-      "history": [
-        {
-          "date": "2026-01-15",
-          "score": 55.8,
-          "agentready_version": "2.22.1",
           "research_version": "1.0.1"
         }
       ],
@@ -190,6 +190,31 @@
       }
     },
     {
+      "repo": "ambient-code/reference",
+      "org": "ambient-code",
+      "name": "reference",
+      "score": 55.8,
+      "tier": "Bronze",
+      "language": "Unknown",
+      "size": "Unknown",
+      "last_updated": "2026-01-15",
+      "url": "https://github.com/ambient-code/reference",
+      "agentready_version": "2.22.1",
+      "research_version": "1.0.1",
+      "history": [
+        {
+          "date": "2026-01-15",
+          "score": 55.8,
+          "agentready_version": "2.22.1",
+          "research_version": "1.0.1"
+        }
+      ],
+      "rank": 8,
+      "lang_rank": {
+        "Unknown": 8
+      }
+    },
+    {
       "repo": "quay/quay",
       "org": "quay",
       "name": "quay",
@@ -209,9 +234,9 @@
           "research_version": "1.0.0"
         }
       ],
-      "rank": 8,
+      "rank": 9,
       "lang_rank": {
-        "Unknown": 8
+        "Unknown": 9
       }
     },
     {
@@ -234,9 +259,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 9,
+      "rank": 10,
       "lang_rank": {
-        "Unknown": 9
+        "Unknown": 10
       }
     }
   ],
@@ -274,6 +299,31 @@
         }
       },
       {
+        "repo": "dbasunag/opendatahub-tests",
+        "org": "dbasunag",
+        "name": "opendatahub-tests",
+        "score": 69.9,
+        "tier": "Silver",
+        "language": "Unknown",
+        "size": "Unknown",
+        "last_updated": "2026-02-18",
+        "url": "https://github.com/dbasunag/opendatahub-tests",
+        "agentready_version": "2.28.0",
+        "research_version": "1.0.1",
+        "history": [
+          {
+            "date": "2026-02-18",
+            "score": 69.9,
+            "agentready_version": "2.28.0",
+            "research_version": "1.0.1"
+          }
+        ],
+        "rank": 2,
+        "lang_rank": {
+          "Unknown": 2
+        }
+      },
+      {
         "repo": "opendatahub-io/ai-helpers",
         "org": "opendatahub-io",
         "name": "ai-helpers",
@@ -299,9 +349,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 2,
+        "rank": 3,
         "lang_rank": {
-          "Unknown": 2
+          "Unknown": 3
         }
       },
       {
@@ -324,9 +374,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 3,
+        "rank": 4,
         "lang_rank": {
-          "Unknown": 3
+          "Unknown": 4
         }
       },
       {
@@ -349,9 +399,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 4,
+        "rank": 5,
         "lang_rank": {
-          "Unknown": 4
+          "Unknown": 5
         }
       },
       {
@@ -371,31 +421,6 @@
             "date": "2026-02-17",
             "score": 61.6,
             "agentready_version": "2.27.3",
-            "research_version": "1.0.1"
-          }
-        ],
-        "rank": 5,
-        "lang_rank": {
-          "Unknown": 5
-        }
-      },
-      {
-        "repo": "ambient-code/reference",
-        "org": "ambient-code",
-        "name": "reference",
-        "score": 55.8,
-        "tier": "Bronze",
-        "language": "Unknown",
-        "size": "Unknown",
-        "last_updated": "2026-01-15",
-        "url": "https://github.com/ambient-code/reference",
-        "agentready_version": "2.22.1",
-        "research_version": "1.0.1",
-        "history": [
-          {
-            "date": "2026-01-15",
-            "score": 55.8,
-            "agentready_version": "2.22.1",
             "research_version": "1.0.1"
           }
         ],
@@ -430,6 +455,31 @@
         }
       },
       {
+        "repo": "ambient-code/reference",
+        "org": "ambient-code",
+        "name": "reference",
+        "score": 55.8,
+        "tier": "Bronze",
+        "language": "Unknown",
+        "size": "Unknown",
+        "last_updated": "2026-01-15",
+        "url": "https://github.com/ambient-code/reference",
+        "agentready_version": "2.22.1",
+        "research_version": "1.0.1",
+        "history": [
+          {
+            "date": "2026-01-15",
+            "score": 55.8,
+            "agentready_version": "2.22.1",
+            "research_version": "1.0.1"
+          }
+        ],
+        "rank": 8,
+        "lang_rank": {
+          "Unknown": 8
+        }
+      },
+      {
         "repo": "quay/quay",
         "org": "quay",
         "name": "quay",
@@ -449,9 +499,9 @@
             "research_version": "1.0.0"
           }
         ],
-        "rank": 8,
+        "rank": 9,
         "lang_rank": {
-          "Unknown": 8
+          "Unknown": 9
         }
       },
       {
@@ -474,9 +524,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 9,
+        "rank": 10,
         "lang_rank": {
-          "Unknown": 9
+          "Unknown": 10
         }
       }
     ]
@@ -515,6 +565,31 @@
         }
       },
       {
+        "repo": "dbasunag/opendatahub-tests",
+        "org": "dbasunag",
+        "name": "opendatahub-tests",
+        "score": 69.9,
+        "tier": "Silver",
+        "language": "Unknown",
+        "size": "Unknown",
+        "last_updated": "2026-02-18",
+        "url": "https://github.com/dbasunag/opendatahub-tests",
+        "agentready_version": "2.28.0",
+        "research_version": "1.0.1",
+        "history": [
+          {
+            "date": "2026-02-18",
+            "score": 69.9,
+            "agentready_version": "2.28.0",
+            "research_version": "1.0.1"
+          }
+        ],
+        "rank": 2,
+        "lang_rank": {
+          "Unknown": 2
+        }
+      },
+      {
         "repo": "opendatahub-io/ai-helpers",
         "org": "opendatahub-io",
         "name": "ai-helpers",
@@ -540,9 +615,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 2,
+        "rank": 3,
         "lang_rank": {
-          "Unknown": 2
+          "Unknown": 3
         }
       },
       {
@@ -565,9 +640,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 3,
+        "rank": 4,
         "lang_rank": {
-          "Unknown": 3
+          "Unknown": 4
         }
       },
       {
@@ -590,9 +665,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 4,
+        "rank": 5,
         "lang_rank": {
-          "Unknown": 4
+          "Unknown": 5
         }
       },
       {
@@ -612,31 +687,6 @@
             "date": "2026-02-17",
             "score": 61.6,
             "agentready_version": "2.27.3",
-            "research_version": "1.0.1"
-          }
-        ],
-        "rank": 5,
-        "lang_rank": {
-          "Unknown": 5
-        }
-      },
-      {
-        "repo": "ambient-code/reference",
-        "org": "ambient-code",
-        "name": "reference",
-        "score": 55.8,
-        "tier": "Bronze",
-        "language": "Unknown",
-        "size": "Unknown",
-        "last_updated": "2026-01-15",
-        "url": "https://github.com/ambient-code/reference",
-        "agentready_version": "2.22.1",
-        "research_version": "1.0.1",
-        "history": [
-          {
-            "date": "2026-01-15",
-            "score": 55.8,
-            "agentready_version": "2.22.1",
             "research_version": "1.0.1"
           }
         ],
@@ -671,6 +721,31 @@
         }
       },
       {
+        "repo": "ambient-code/reference",
+        "org": "ambient-code",
+        "name": "reference",
+        "score": 55.8,
+        "tier": "Bronze",
+        "language": "Unknown",
+        "size": "Unknown",
+        "last_updated": "2026-01-15",
+        "url": "https://github.com/ambient-code/reference",
+        "agentready_version": "2.22.1",
+        "research_version": "1.0.1",
+        "history": [
+          {
+            "date": "2026-01-15",
+            "score": 55.8,
+            "agentready_version": "2.22.1",
+            "research_version": "1.0.1"
+          }
+        ],
+        "rank": 8,
+        "lang_rank": {
+          "Unknown": 8
+        }
+      },
+      {
         "repo": "quay/quay",
         "org": "quay",
         "name": "quay",
@@ -690,9 +765,9 @@
             "research_version": "1.0.0"
           }
         ],
-        "rank": 8,
+        "rank": 9,
         "lang_rank": {
-          "Unknown": 8
+          "Unknown": 9
         }
       },
       {
@@ -715,9 +790,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 9,
+        "rank": 10,
         "lang_rank": {
-          "Unknown": 9
+          "Unknown": 10
         }
       }
     ]
