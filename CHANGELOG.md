@@ -1,3 +1,10 @@
+## [2.29.1](https://github.com/ambient-code/agentready/compare/v2.29.0...v2.29.1) (2026-02-20)
+
+
+### Bug Fixes
+
+* Check for all official commitlint config file formats ([#308](https://github.com/ambient-code/agentready/issues/308)) ([50588cf](https://github.com/ambient-code/agentready/commit/50588cf1dc974e83a6427fbb3e5f5d9e5d4ed3b6))
+
 # [2.29.0](https://github.com/ambient-code/agentready/compare/v2.28.2...v2.29.0) (2026-02-20)
 
 
