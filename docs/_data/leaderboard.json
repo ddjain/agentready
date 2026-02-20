@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-19T19:27:28.971228Z",
-  "total_repositories": 10,
+  "generated_at": "2026-02-20T04:34:09.122616Z",
+  "total_repositories": 11,
   "overall": [
     {
       "repo": "ambient-code/agentready",
@@ -34,6 +34,31 @@
       }
     },
     {
+      "repo": "opendatahub-io/opendatahub-tests",
+      "org": "opendatahub-io",
+      "name": "opendatahub-tests",
+      "score": 73.5,
+      "tier": "Silver",
+      "language": "Unknown",
+      "size": "Unknown",
+      "last_updated": "2026-02-19",
+      "url": "https://github.com/opendatahub-io/opendatahub-tests",
+      "agentready_version": "2.28.0",
+      "research_version": "1.0.1",
+      "history": [
+        {
+          "date": "2026-02-19",
+          "score": 73.5,
+          "agentready_version": "2.28.0",
+          "research_version": "1.0.1"
+        }
+      ],
+      "rank": 2,
+      "lang_rank": {
+        "Unknown": 2
+      }
+    },
+    {
       "repo": "dbasunag/opendatahub-tests",
       "org": "dbasunag",
       "name": "opendatahub-tests",
@@ -53,9 +78,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 2,
+      "rank": 3,
       "lang_rank": {
-        "Unknown": 2
+        "Unknown": 3
       }
     },
     {
@@ -84,9 +109,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 3,
+      "rank": 4,
       "lang_rank": {
-        "Unknown": 3
+        "Unknown": 4
       }
     },
     {
@@ -109,9 +134,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 4,
+      "rank": 5,
       "lang_rank": {
-        "Unknown": 4
+        "Unknown": 5
       }
     },
     {
@@ -134,9 +159,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 5,
+      "rank": 6,
       "lang_rank": {
-        "Unknown": 5
+        "Unknown": 6
       }
     },
     {
@@ -156,31 +181,6 @@
           "date": "2026-02-17",
           "score": 61.6,
           "agentready_version": "2.27.3",
-          "research_version": "1.0.1"
-        }
-      ],
-      "rank": 6,
-      "lang_rank": {
-        "Unknown": 6
-      }
-    },
-    {
-      "repo": "jeremyeder/reference",
-      "org": "jeremyeder",
-      "name": "reference",
-      "score": 55.8,
-      "tier": "Bronze",
-      "language": "Unknown",
-      "size": "Unknown",
-      "last_updated": "2026-01-15",
-      "url": "https://github.com/jeremyeder/reference",
-      "agentready_version": "2.22.0",
-      "research_version": "1.0.1",
-      "history": [
-        {
-          "date": "2026-01-15",
-          "score": 55.8,
-          "agentready_version": "2.22.0",
           "research_version": "1.0.1"
         }
       ],
@@ -215,6 +215,31 @@
       }
     },
     {
+      "repo": "jeremyeder/reference",
+      "org": "jeremyeder",
+      "name": "reference",
+      "score": 55.8,
+      "tier": "Bronze",
+      "language": "Unknown",
+      "size": "Unknown",
+      "last_updated": "2026-01-15",
+      "url": "https://github.com/jeremyeder/reference",
+      "agentready_version": "2.22.0",
+      "research_version": "1.0.1",
+      "history": [
+        {
+          "date": "2026-01-15",
+          "score": 55.8,
+          "agentready_version": "2.22.0",
+          "research_version": "1.0.1"
+        }
+      ],
+      "rank": 9,
+      "lang_rank": {
+        "Unknown": 9
+      }
+    },
+    {
       "repo": "quay/quay",
       "org": "quay",
       "name": "quay",
@@ -234,9 +259,9 @@
           "research_version": "1.0.0"
         }
       ],
-      "rank": 9,
+      "rank": 10,
       "lang_rank": {
-        "Unknown": 9
+        "Unknown": 10
       }
     },
     {
@@ -259,9 +284,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 10,
+      "rank": 11,
       "lang_rank": {
-        "Unknown": 10
+        "Unknown": 11
       }
     }
   ],
@@ -299,6 +324,31 @@
         }
       },
       {
+        "repo": "opendatahub-io/opendatahub-tests",
+        "org": "opendatahub-io",
+        "name": "opendatahub-tests",
+        "score": 73.5,
+        "tier": "Silver",
+        "language": "Unknown",
+        "size": "Unknown",
+        "last_updated": "2026-02-19",
+        "url": "https://github.com/opendatahub-io/opendatahub-tests",
+        "agentready_version": "2.28.0",
+        "research_version": "1.0.1",
+        "history": [
+          {
+            "date": "2026-02-19",
+            "score": 73.5,
+            "agentready_version": "2.28.0",
+            "research_version": "1.0.1"
+          }
+        ],
+        "rank": 2,
+        "lang_rank": {
+          "Unknown": 2
+        }
+      },
+      {
         "repo": "dbasunag/opendatahub-tests",
         "org": "dbasunag",
         "name": "opendatahub-tests",
@@ -318,9 +368,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 2,
+        "rank": 3,
         "lang_rank": {
-          "Unknown": 2
+          "Unknown": 3
         }
       },
       {
@@ -349,9 +399,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 3,
+        "rank": 4,
         "lang_rank": {
-          "Unknown": 3
+          "Unknown": 4
         }
       },
       {
@@ -374,9 +424,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 4,
+        "rank": 5,
         "lang_rank": {
-          "Unknown": 4
+          "Unknown": 5
         }
       },
       {
@@ -399,9 +449,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 5,
+        "rank": 6,
         "lang_rank": {
-          "Unknown": 5
+          "Unknown": 6
         }
       },
       {
@@ -421,31 +471,6 @@
             "date": "2026-02-17",
             "score": 61.6,
             "agentready_version": "2.27.3",
-            "research_version": "1.0.1"
-          }
-        ],
-        "rank": 6,
-        "lang_rank": {
-          "Unknown": 6
-        }
-      },
-      {
-        "repo": "jeremyeder/reference",
-        "org": "jeremyeder",
-        "name": "reference",
-        "score": 55.8,
-        "tier": "Bronze",
-        "language": "Unknown",
-        "size": "Unknown",
-        "last_updated": "2026-01-15",
-        "url": "https://github.com/jeremyeder/reference",
-        "agentready_version": "2.22.0",
-        "research_version": "1.0.1",
-        "history": [
-          {
-            "date": "2026-01-15",
-            "score": 55.8,
-            "agentready_version": "2.22.0",
             "research_version": "1.0.1"
           }
         ],
@@ -480,6 +505,31 @@
         }
       },
       {
+        "repo": "jeremyeder/reference",
+        "org": "jeremyeder",
+        "name": "reference",
+        "score": 55.8,
+        "tier": "Bronze",
+        "language": "Unknown",
+        "size": "Unknown",
+        "last_updated": "2026-01-15",
+        "url": "https://github.com/jeremyeder/reference",
+        "agentready_version": "2.22.0",
+        "research_version": "1.0.1",
+        "history": [
+          {
+            "date": "2026-01-15",
+            "score": 55.8,
+            "agentready_version": "2.22.0",
+            "research_version": "1.0.1"
+          }
+        ],
+        "rank": 9,
+        "lang_rank": {
+          "Unknown": 9
+        }
+      },
+      {
         "repo": "quay/quay",
         "org": "quay",
         "name": "quay",
@@ -499,9 +549,9 @@
             "research_version": "1.0.0"
           }
         ],
-        "rank": 9,
+        "rank": 10,
         "lang_rank": {
-          "Unknown": 9
+          "Unknown": 10
         }
       },
       {
@@ -524,9 +574,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 10,
+        "rank": 11,
         "lang_rank": {
-          "Unknown": 10
+          "Unknown": 11
         }
       }
     ]
@@ -565,6 +615,31 @@
         }
       },
       {
+        "repo": "opendatahub-io/opendatahub-tests",
+        "org": "opendatahub-io",
+        "name": "opendatahub-tests",
+        "score": 73.5,
+        "tier": "Silver",
+        "language": "Unknown",
+        "size": "Unknown",
+        "last_updated": "2026-02-19",
+        "url": "https://github.com/opendatahub-io/opendatahub-tests",
+        "agentready_version": "2.28.0",
+        "research_version": "1.0.1",
+        "history": [
+          {
+            "date": "2026-02-19",
+            "score": 73.5,
+            "agentready_version": "2.28.0",
+            "research_version": "1.0.1"
+          }
+        ],
+        "rank": 2,
+        "lang_rank": {
+          "Unknown": 2
+        }
+      },
+      {
         "repo": "dbasunag/opendatahub-tests",
         "org": "dbasunag",
         "name": "opendatahub-tests",
@@ -584,9 +659,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 2,
+        "rank": 3,
         "lang_rank": {
-          "Unknown": 2
+          "Unknown": 3
         }
       },
       {
@@ -615,9 +690,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 3,
+        "rank": 4,
         "lang_rank": {
-          "Unknown": 3
+          "Unknown": 4
         }
       },
       {
@@ -640,9 +715,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 4,
+        "rank": 5,
         "lang_rank": {
-          "Unknown": 4
+          "Unknown": 5
         }
       },
       {
@@ -665,9 +740,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 5,
+        "rank": 6,
         "lang_rank": {
-          "Unknown": 5
+          "Unknown": 6
         }
       },
       {
@@ -687,31 +762,6 @@
             "date": "2026-02-17",
             "score": 61.6,
             "agentready_version": "2.27.3",
-            "research_version": "1.0.1"
-          }
-        ],
-        "rank": 6,
-        "lang_rank": {
-          "Unknown": 6
-        }
-      },
-      {
-        "repo": "jeremyeder/reference",
-        "org": "jeremyeder",
-        "name": "reference",
-        "score": 55.8,
-        "tier": "Bronze",
-        "language": "Unknown",
-        "size": "Unknown",
-        "last_updated": "2026-01-15",
-        "url": "https://github.com/jeremyeder/reference",
-        "agentready_version": "2.22.0",
-        "research_version": "1.0.1",
-        "history": [
-          {
-            "date": "2026-01-15",
-            "score": 55.8,
-            "agentready_version": "2.22.0",
             "research_version": "1.0.1"
           }
         ],
@@ -746,6 +796,31 @@
         }
       },
       {
+        "repo": "jeremyeder/reference",
+        "org": "jeremyeder",
+        "name": "reference",
+        "score": 55.8,
+        "tier": "Bronze",
+        "language": "Unknown",
+        "size": "Unknown",
+        "last_updated": "2026-01-15",
+        "url": "https://github.com/jeremyeder/reference",
+        "agentready_version": "2.22.0",
+        "research_version": "1.0.1",
+        "history": [
+          {
+            "date": "2026-01-15",
+            "score": 55.8,
+            "agentready_version": "2.22.0",
+            "research_version": "1.0.1"
+          }
+        ],
+        "rank": 9,
+        "lang_rank": {
+          "Unknown": 9
+        }
+      },
+      {
         "repo": "quay/quay",
         "org": "quay",
         "name": "quay",
@@ -765,9 +840,9 @@
             "research_version": "1.0.0"
           }
         ],
-        "rank": 9,
+        "rank": 10,
         "lang_rank": {
-          "Unknown": 9
+          "Unknown": 10
         }
       },
       {
@@ -790,9 +865,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 10,
+        "rank": 11,
         "lang_rank": {
-          "Unknown": 10
+          "Unknown": 11
         }
       }
     ]
