@@ -1,3 +1,11 @@
+## [2.29.2](https://github.com/ambient-code/agentready/compare/v2.29.1...v2.29.2) (2026-02-23)
+
+
+### Bug Fixes
+
+* **cli:** check .pre-commit-config.yaml for conventional commit ([#310](https://github.com/ambient-code/agentready/issues/310)) ([61c44d9](https://github.com/ambient-code/agentready/commit/61c44d96cd9ccda085acab84dc292b3b95a110d8))
+* remove incorrect dbasunag/opendatahub-tests submission ([#321](https://github.com/ambient-code/agentready/issues/321)) ([e6aecf8](https://github.com/ambient-code/agentready/commit/e6aecf816da8c209403b121c415e11bfa973e193)), closes [#301](https://github.com/ambient-code/agentready/issues/301)
+
 ## [2.29.1](https://github.com/ambient-code/agentready/compare/v2.29.0...v2.29.1) (2026-02-20)
 
 
