@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-20T04:34:09.122616Z",
-  "total_repositories": 11,
+  "generated_at": "2026-02-23T22:08:53.305118Z",
+  "total_repositories": 10,
   "overall": [
     {
       "repo": "ambient-code/agentready",
@@ -59,31 +59,6 @@
       }
     },
     {
-      "repo": "dbasunag/opendatahub-tests",
-      "org": "dbasunag",
-      "name": "opendatahub-tests",
-      "score": 69.9,
-      "tier": "Silver",
-      "language": "Unknown",
-      "size": "Unknown",
-      "last_updated": "2026-02-18",
-      "url": "https://github.com/dbasunag/opendatahub-tests",
-      "agentready_version": "2.28.0",
-      "research_version": "1.0.1",
-      "history": [
-        {
-          "date": "2026-02-18",
-          "score": 69.9,
-          "agentready_version": "2.28.0",
-          "research_version": "1.0.1"
-        }
-      ],
-      "rank": 3,
-      "lang_rank": {
-        "Unknown": 3
-      }
-    },
-    {
       "repo": "opendatahub-io/ai-helpers",
       "org": "opendatahub-io",
       "name": "ai-helpers",
@@ -109,9 +84,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 4,
+      "rank": 3,
       "lang_rank": {
-        "Unknown": 4
+        "Unknown": 3
       }
     },
     {
@@ -134,9 +109,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 5,
+      "rank": 4,
       "lang_rank": {
-        "Unknown": 5
+        "Unknown": 4
       }
     },
     {
@@ -159,9 +134,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 6,
+      "rank": 5,
       "lang_rank": {
-        "Unknown": 6
+        "Unknown": 5
       }
     },
     {
@@ -184,9 +159,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 7,
+      "rank": 6,
       "lang_rank": {
-        "Unknown": 7
+        "Unknown": 6
       }
     },
     {
@@ -209,9 +184,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 8,
+      "rank": 7,
       "lang_rank": {
-        "Unknown": 8
+        "Unknown": 7
       }
     },
     {
@@ -234,9 +209,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 9,
+      "rank": 8,
       "lang_rank": {
-        "Unknown": 9
+        "Unknown": 8
       }
     },
     {
@@ -259,9 +234,9 @@
           "research_version": "1.0.0"
         }
       ],
-      "rank": 10,
+      "rank": 9,
       "lang_rank": {
-        "Unknown": 10
+        "Unknown": 9
       }
     },
     {
@@ -284,9 +259,9 @@
           "research_version": "1.0.1"
         }
       ],
-      "rank": 11,
+      "rank": 10,
       "lang_rank": {
-        "Unknown": 11
+        "Unknown": 10
       }
     }
   ],
@@ -349,31 +324,6 @@
         }
       },
       {
-        "repo": "dbasunag/opendatahub-tests",
-        "org": "dbasunag",
-        "name": "opendatahub-tests",
-        "score": 69.9,
-        "tier": "Silver",
-        "language": "Unknown",
-        "size": "Unknown",
-        "last_updated": "2026-02-18",
-        "url": "https://github.com/dbasunag/opendatahub-tests",
-        "agentready_version": "2.28.0",
-        "research_version": "1.0.1",
-        "history": [
-          {
-            "date": "2026-02-18",
-            "score": 69.9,
-            "agentready_version": "2.28.0",
-            "research_version": "1.0.1"
-          }
-        ],
-        "rank": 3,
-        "lang_rank": {
-          "Unknown": 3
-        }
-      },
-      {
         "repo": "opendatahub-io/ai-helpers",
         "org": "opendatahub-io",
         "name": "ai-helpers",
@@ -399,9 +349,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 4,
+        "rank": 3,
         "lang_rank": {
-          "Unknown": 4
+          "Unknown": 3
         }
       },
       {
@@ -424,9 +374,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 5,
+        "rank": 4,
         "lang_rank": {
-          "Unknown": 5
+          "Unknown": 4
         }
       },
       {
@@ -449,9 +399,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 6,
+        "rank": 5,
         "lang_rank": {
-          "Unknown": 6
+          "Unknown": 5
         }
       },
       {
@@ -474,9 +424,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 7,
+        "rank": 6,
         "lang_rank": {
-          "Unknown": 7
+          "Unknown": 6
         }
       },
       {
@@ -499,9 +449,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 8,
+        "rank": 7,
         "lang_rank": {
-          "Unknown": 8
+          "Unknown": 7
         }
       },
       {
@@ -524,9 +474,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 9,
+        "rank": 8,
         "lang_rank": {
-          "Unknown": 9
+          "Unknown": 8
         }
       },
       {
@@ -549,9 +499,9 @@
             "research_version": "1.0.0"
           }
         ],
-        "rank": 10,
+        "rank": 9,
         "lang_rank": {
-          "Unknown": 10
+          "Unknown": 9
         }
       },
       {
@@ -574,9 +524,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 11,
+        "rank": 10,
         "lang_rank": {
-          "Unknown": 11
+          "Unknown": 10
         }
       }
     ]
@@ -640,31 +590,6 @@
         }
       },
       {
-        "repo": "dbasunag/opendatahub-tests",
-        "org": "dbasunag",
-        "name": "opendatahub-tests",
-        "score": 69.9,
-        "tier": "Silver",
-        "language": "Unknown",
-        "size": "Unknown",
-        "last_updated": "2026-02-18",
-        "url": "https://github.com/dbasunag/opendatahub-tests",
-        "agentready_version": "2.28.0",
-        "research_version": "1.0.1",
-        "history": [
-          {
-            "date": "2026-02-18",
-            "score": 69.9,
-            "agentready_version": "2.28.0",
-            "research_version": "1.0.1"
-          }
-        ],
-        "rank": 3,
-        "lang_rank": {
-          "Unknown": 3
-        }
-      },
-      {
         "repo": "opendatahub-io/ai-helpers",
         "org": "opendatahub-io",
         "name": "ai-helpers",
@@ -690,9 +615,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 4,
+        "rank": 3,
         "lang_rank": {
-          "Unknown": 4
+          "Unknown": 3
         }
       },
       {
@@ -715,9 +640,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 5,
+        "rank": 4,
         "lang_rank": {
-          "Unknown": 5
+          "Unknown": 4
         }
       },
       {
@@ -740,9 +665,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 6,
+        "rank": 5,
         "lang_rank": {
-          "Unknown": 6
+          "Unknown": 5
         }
       },
       {
@@ -765,9 +690,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 7,
+        "rank": 6,
         "lang_rank": {
-          "Unknown": 7
+          "Unknown": 6
         }
       },
       {
@@ -790,9 +715,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 8,
+        "rank": 7,
         "lang_rank": {
-          "Unknown": 8
+          "Unknown": 7
         }
       },
       {
@@ -815,9 +740,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 9,
+        "rank": 8,
         "lang_rank": {
-          "Unknown": 9
+          "Unknown": 8
         }
       },
       {
@@ -840,9 +765,9 @@
             "research_version": "1.0.0"
           }
         ],
-        "rank": 10,
+        "rank": 9,
         "lang_rank": {
-          "Unknown": 10
+          "Unknown": 9
         }
       },
       {
@@ -865,9 +790,9 @@
             "research_version": "1.0.1"
           }
         ],
-        "rank": 11,
+        "rank": 10,
         "lang_rank": {
-          "Unknown": 11
+          "Unknown": 10
         }
       }
     ]
