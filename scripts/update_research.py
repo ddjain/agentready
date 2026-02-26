@@ -28,7 +28,7 @@ class ResearchUpdater:
             raise FileNotFoundError(f"Config file not found: {config_path}")
         self.config = self._load_config(config_path)
 
-        use_vertex = os.environ.get("USE_CLAUDE_VERTEX", "").strip() == "1"
+        use_vertex = os.environ.get("CLAUDE_CODE_USE_VERTEX", "").strip() == "1"
         api_key = os.environ.get("ANTHROPIC_API_KEY") if not use_vertex else None
         if not use_vertex and not api_key:
             raise ValueError("ANTHROPIC_API_KEY environment variable is required")

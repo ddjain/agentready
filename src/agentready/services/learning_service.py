@@ -265,7 +265,7 @@ class LearningService:
         from agentready.learners.llm_enricher import LLMEnricher
         from agentready.services.llm_client import create_anthropic_client
 
-        use_vertex = os.environ.get("USE_CLAUDE_VERTEX", "").strip() == "1"
+        use_vertex = os.environ.get("CLAUDE_CODE_USE_VERTEX", "").strip() == "1"
         api_key = os.environ.get("ANTHROPIC_API_KEY") if not use_vertex else None
         if not use_vertex and not api_key:
             logger.warning("LLM enrichment enabled but ANTHROPIC_API_KEY not set")
