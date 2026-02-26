@@ -41,6 +41,9 @@ dev = [
     "flake8>=6.0.0",
     "ruff>=0.1.0",
 ]
+vertex = [
+    "google-auth>=2.0.0",
+]
 
 [project.scripts]
 agentready = "agentready.cli.main:cli"

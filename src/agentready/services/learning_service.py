@@ -262,29 +262,27 @@ class LearningService:
         Returns:
             List with top skills enriched
         """
-        from anthropic import Anthropic
-
         from agentready.learners.llm_enricher import LLMEnricher
+        from agentready.services.llm_client import create_anthropic_client
 
-        # Security: Get API key from environment
-        api_key = os.environ.get("ANTHROPIC_API_KEY")
-        if not api_key:
+        use_vertex = os.environ.get("USE_CLAUDE_VERTEX", "").strip() == "1"
+        api_key = os.environ.get("ANTHROPIC_API_KEY") if not use_vertex else None
+        if not use_vertex and not api_key:
             logger.warning("LLM enrichment enabled but ANTHROPIC_API_KEY not set")
             return skills
 
-        # Security: Clear API key from environment to prevent exposure
-        # API keys should not persist in os.environ where they could be logged
-        try:
-            del os.environ["ANTHROPIC_API_KEY"]
-        except KeyError:
-            pass  # Already removed or never existed
+        # Security: Clear API key from environment to prevent exposure when used
+        if api_key:
+            try:
+                del os.environ["ANTHROPIC_API_KEY"]
+            except KeyError:
+                pass
 
-        # Initialize LLM enricher
-        client = Anthropic(api_key=api_key)
-        enricher = LLMEnricher(client)
-
-        # Security: Clear API key from local scope after client creation
-        api_key = None
+        client = create_anthropic_client(api_key=api_key)
+        model = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-5-20250929")
+        enricher = LLMEnricher(client, model=model)
+        if api_key:
+            api_key = None
 
         # Enrich top N skills
         enriched_skills = []

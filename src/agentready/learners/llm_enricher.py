@@ -7,7 +7,7 @@ import random
 from pathlib import Path
 from time import sleep
 
-from anthropic import Anthropic, APIError, RateLimitError
+from anthropic import APIError, Anthropic, AnthropicVertex, RateLimitError
 
 from agentready.models import DiscoveredSkill, Finding, Repository
 from agentready.services.llm_cache import LLMCache
@@ -23,14 +23,14 @@ class LLMEnricher:
 
     def __init__(
         self,
-        client: Anthropic,
+        client: Anthropic | AnthropicVertex,
         cache_dir: Path | None = None,
         model: str = "claude-sonnet-4-5-20250929",
     ):
         """Initialize LLM enricher.
 
         Args:
-            client: Anthropic API client
+            client: Anthropic or AnthropicVertex API client
             cache_dir: Cache directory (default: .agentready/llm-cache)
             model: Claude model to use
         """

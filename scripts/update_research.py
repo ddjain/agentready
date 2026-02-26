@@ -14,8 +14,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List
 
-import anthropic
 import yaml
+
+from agentready.services.llm_client import create_anthropic_client
 
 
 class ResearchUpdater:
@@ -27,10 +28,12 @@ class ResearchUpdater:
             raise FileNotFoundError(f"Config file not found: {config_path}")
         self.config = self._load_config(config_path)
 
-        api_key = os.environ.get("ANTHROPIC_API_KEY")
-        if not api_key:
+        use_vertex = os.environ.get("USE_CLAUDE_VERTEX", "").strip() == "1"
+        api_key = os.environ.get("ANTHROPIC_API_KEY") if not use_vertex else None
+        if not use_vertex and not api_key:
             raise ValueError("ANTHROPIC_API_KEY environment variable is required")
-        self.client = anthropic.Anthropic(api_key=api_key)
+        self.client = create_anthropic_client(api_key=api_key)
+        self.model = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-5-20250929")
 
         self.report_path = Path("RESEARCH_REPORT.md")
         if not self.report_path.exists():
@@ -78,7 +81,7 @@ Format as JSON array."""
 
         try:
             response = self.client.messages.create(
-                model="claude-sonnet-4-5-20250929",
+                model=self.model,
                 max_tokens=2048,
                 messages=[{"role": "user", "content": prompt}],
             )
@@ -151,7 +154,7 @@ OUTPUT FORMAT (JSON):
 
         try:
             response = self.client.messages.create(
-                model="claude-sonnet-4-5-20250929",
+                model=self.model,
                 max_tokens=4096,
                 messages=[{"role": "user", "content": prompt}],
             )

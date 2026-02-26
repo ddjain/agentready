@@ -76,6 +76,10 @@ repomix/repomix-output.*
 *.whl
 *.tar.gz
 
+# Local env and tooling (do not commit)
+.env
+.serena/
+
 # Configuration (exclude example)
 .agentready-config.yaml
 !.agentready-config.example.yaml
