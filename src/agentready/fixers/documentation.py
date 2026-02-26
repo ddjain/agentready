@@ -18,6 +18,17 @@ ANTHROPIC_API_KEY_ENV = "ANTHROPIC_API_KEY"
 CLAUDE_MD_REDIRECT_LINE = "@AGENTS.md\n"
 
 
+def _has_claude_auth() -> bool:
+    """Check if valid Claude authentication is available (API key or Vertex AI)."""
+    if os.environ.get(ANTHROPIC_API_KEY_ENV):
+        return True
+    return (
+        bool(os.environ.get("CLAUDE_CODE_USE_VERTEX"))
+        and bool(os.environ.get("ANTHROPIC_VERTEX_PROJECT_ID"))
+        and bool(os.environ.get("CLOUD_ML_REGION"))
+    )
+
+
 def _claude_md_command() -> str:
     """Build Claude CLI command with prompt loaded from resources (safe shell quoting)."""
     import shlex
@@ -124,7 +135,7 @@ class CLAUDEmdFixer(BaseFixer):
         If AGENTS.md already exists: create CLAUDE.md with @AGENTS.md only (no Claude CLI).
         Otherwise: run Claude CLI to generate CLAUDE.md, then move content to AGENTS.md
         and replace CLAUDE.md with @AGENTS.md. Returns None if Claude CLI is required
-        but not on PATH or ANTHROPIC_API_KEY is not set.
+        but not on PATH or no valid authentication is configured.
         """
         if not self.can_fix(finding):
             return None
@@ -141,7 +152,8 @@ class CLAUDEmdFixer(BaseFixer):
 
         if not shutil.which("claude"):
             return None
-        if not os.environ.get(ANTHROPIC_API_KEY_ENV):
+
+        if not _has_claude_auth():
             return None
 
         points = self.estimate_score_improvement(finding)

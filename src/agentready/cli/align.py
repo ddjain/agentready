@@ -151,7 +151,9 @@ def align(repository, dry_run, attributes, interactive):
         }
         if "claude_md_file" in failing_ids:
             click.echo(
-                "\n💡 Tip: Install the Claude CLI and set ANTHROPIC_API_KEY to "
+                "\n💡 Tip: Install the Claude CLI and set ANTHROPIC_API_KEY "
+                "(or configure Vertex AI via CLAUDE_CODE_USE_VERTEX, "
+                "ANTHROPIC_VERTEX_PROJECT_ID, and CLOUD_ML_REGION) to "
                 "enable automatic CLAUDE.md generation."
             )
         sys.exit(0)
